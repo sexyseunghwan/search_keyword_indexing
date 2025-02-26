@@ -30,4 +30,7 @@ rayon = "1.10.0"
 cron = "0.13.0"
 toml = "0.8.19"
 bigdecimal = "0.4.7"
+http = "1.2.0"
 tiberius = { version = "0.12", default-features = false, features = ["tds73", "rustls"] }
+tokio-util = { version = "0.7", features = ["compat"] }
+futures-util = "0.3"

@@ -14,11 +14,15 @@ pub use rand::{prelude::SliceRandom, rngs::StdRng, SeedableRng};
 
 pub use tokio::{
     io::AsyncReadExt,
+    net::TcpStream,
     signal,
     sync::{Mutex, MutexGuard, OnceCell},
     time::{Duration, Interval},
 };
 
+pub use futures_util::TryStreamExt;
+
+pub use tokio_util::compat::{Compat, TokioAsyncWriteCompatExt};
 
 pub use log::{error, info, warn};
 
@@ -34,6 +38,8 @@ pub use serde::{Deserialize, Serialize};
 pub use serde::de::DeserializeOwned;
 
 pub use serde_json::{json, Value};
+
+pub use http::header::{HeaderMap, HeaderValue, CONTENT_TYPE};
 
 pub use dotenv::dotenv;
 
@@ -59,24 +65,9 @@ pub use getset::Getters;
 
 pub use num_format::{Locale, ToFormattedString};
 
-// pub use rdkafka:: {
-//     config::ClientConfig,
-//     consumer::Consumer,
-//     producer::{FutureProducer, FutureRecord},
-//     message::Message as KafkaMessage
-// };
-
-// pub use kafka::{
-//     producer::{Producer, Record as KafkaRecord, RequiredAcks}
-// };
-
-// pub use diesel::{
-//     dsl::count_star,
-//     mysql::MysqlConnection,
-//     r2d2::{ConnectionManager, Pool, PooledConnection},
-//     AsChangeset, ExpressionMethods, Insertable, NullableExpressionMethods, QueryDsl, Queryable,
-//     QueryableByName, RunQueryDsl, SelectableHelper
-// };
+pub use tiberius::{
+    time::DateTime as tiDatetime, AuthMethod, Client, Config, Query, QueryItem, Row, ToSql,
+};
 
 pub use async_trait::async_trait;
 
@@ -88,4 +79,3 @@ pub use async_trait::async_trait;
 pub use regex::Regex;
 
 pub use once_cell::sync::Lazy as once_lazy;
-

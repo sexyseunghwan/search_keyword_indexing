@@ -1,0 +1,3 @@
+schedule_name = "search keyword schedule"
+index_alias_name = "search_keyword_aggregation_index"
+time = "0 * * * * * *"
